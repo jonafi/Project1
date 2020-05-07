@@ -1,0 +1,17 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1533628635777-112b2239b1c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)");
+    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Indie Flower', cursive;
+}
+
+p {
+    font-size: x-large;
+}
+
+h4 {
+    text-align: center;
+}
+
+.input {
+    height: 50px;
+}
