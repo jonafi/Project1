@@ -1,40 +1,69 @@
-$( document ).ready(function() {
+$(document).ready(function () {
+
+    function getCocktail(userInput) {
+        if (userInput === "rando") {
+            var APIcall = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+        }
+        else {
+            var APIcall = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + userInput;
+        }
+        $.ajax({
+            url: APIcall, method: "GET",
+
+        }).then(function (cocktailDB) {
+            //Set all the variables, drink ingredients as an array
+            var drinkIngredients = [];
+            var drinkName = cocktailDB.drinks[0].strDrink;
+            var drinkImageURL = cocktailDB.drinks[0].strDrinkThumb;
+            var drinkInstrructions = cocktailDB.drinks[0].strInstructions;
+
+            for (i = 1; i < 15; i++) {
+                if (cocktailDB.drinks[0]["strIngredient" + i] !== null) {
+                    drinkIngredients.push(cocktailDB.drinks[0]["strIngredient" + i]);
+                }
+            }
+
+            //Basic display shows name of drink, picture, and instructions
+            //ingredients are displayed as list items
+            //div has a starter class of "Cocktail"
+            var cocktailDisplay = $("<div>");
+            cocktailDisplay.addClass("Cocktail");
+
+            var cocktailName = $("<div>");
+            cocktailName.text(drinkName);
+
+            var cocktailImage = $("<img>");
+            cocktailImage.attr("src", drinkImageURL);
+            //cocktailImage.attr("style", "height:250px;")
+
+            var cocktailIngredients = $("<ul>");
+            for (i = 0; i < drinkIngredients.length; i++) {
+                cocktailIngredientsItem = $("<li>");
+                cocktailIngredientsItem.text(drinkIngredients[i]);
+                cocktailIngredients.append(cocktailIngredientsItem);
+            }
+
+            var cocktailDirections = $("<div>");
+            cocktailDirections.text(drinkInstrructions);
+
+            cocktailDisplay.append(cocktailName);
+            cocktailDisplay.append(cocktailImage);
+            cocktailDisplay.append(cocktailIngredients);
+            cocktailDisplay.append(cocktailDirections);
+            //$("body").append(cocktailDisplay);
 
 
-function getCocktail(userInput){
-    if(userInput==="rando"){
-    var APIcall = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-    }
-   else{
-    var APIcall = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + userInput;
-    }    
-    $.ajax({url: APIcall, method: "GET",
-            
-    }).then(function(cocktailDB) {
-        console.log("------------------------------------");
-        console.log(cocktailDB.drinks[0].strDrink);
-        console.log(cocktailDB.drinks[0].strDrinkThumb);
-        console.log(cocktailDB.drinks[0].strIngredient1);
-        console.log(cocktailDB.drinks[0].strIngredient2);
-        console.log(cocktailDB.drinks[0].strIngredient3); 
-        console.log(cocktailDB.drinks[0].strIngredient4); 
-        console.log(cocktailDB.drinks[0].strIngredient5); 
-        console.log(cocktailDB.drinks[0].strIngredient6); 
-        console.log(cocktailDB.drinks[0].strIngredient7); 
-        console.log(cocktailDB.drinks[0].strIngredient8); 
-        console.log(cocktailDB.drinks[0].strIngredient9); 
-        console.log(cocktailDB.drinks[0].strIngredient10);
-        console.log(cocktailDB.drinks[0].strInstructions);
-        console.log("------------------------------------");
-        
-    });
-};
 
-var userInput = "rando";
-getCocktail(userInput);
 
-var userInput = "piña colada";
-getCocktail(userInput);
+
+        });
+    };
+
+    var userInput = "rando";
+    getCocktail(userInput);
+
+    //var userInput = "piña colada";
+    //getCocktail(userInput);
 
 $("#breakfast-btn").on("click,", function(){
     
