@@ -64,12 +64,7 @@ $(document).ready(function () {
 
     //var userInput = "piña colada";
     //getCocktail(userInput);
-$("#breakfast-btn").on('click', getRecipe);
 
-function getRecipe() {
-
-    
-}
 
 });
 
