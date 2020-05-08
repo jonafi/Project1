@@ -66,6 +66,5 @@ $(document).ready(function () {
     //getCocktail(userInput);
 
 
-
 });
 
