@@ -50,7 +50,7 @@ $(document).ready(function () {
             cocktailDisplay.append(cocktailImage);
             cocktailDisplay.append(cocktailIngredients);
             cocktailDisplay.append(cocktailDirections);
-            //$("body").append(cocktailDisplay);
+            $("#cocktail").append(cocktailDisplay);
 
 
 
