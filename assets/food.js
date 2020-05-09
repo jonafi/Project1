@@ -14,18 +14,18 @@ function getRecipe() {
         var foodPicURL = response.meals[0].strMealThumb;
         var foodInstructions = response.meals[0].strInstructions;
         var foodTime = response.meals[0].strCategory;
-        console.log(foodName);
-        console.log(meal);
-        console.log(ingredients);
-        console.log(foodTime);
 
+
+
+
+//ingredients range from 1-20
         for (i = 1; i < 20; i++) {
             if (response.meals[0]["strIngredient" + i] !== null) {
                 foodIngredients.push(response.meals[0]["strIngredient" + i]);
             }
         }
 
-
+// creating the div to display the meal
         var mealDisplay = $("<div>");
         mealDisplay.addClass("Meal");
 
@@ -39,7 +39,7 @@ function getRecipe() {
         for(i = 0; i < foodIngredients.length; i++) {
             recipeIngredientsItem = $("<li>");
             recipeIngredientsItem.text(foodIngredients[i]);
-            foodIngredients.append(recipeIngredientsItem);
+            recipeIngredients.append(recipeIngredientsItem);
         }
         
         var recipeGuide = $("<div>");
