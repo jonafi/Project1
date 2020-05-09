@@ -69,7 +69,8 @@ $(document).ready(function () {
                 // console.log(boozeFree.drinks[i].idDrink);
                 var naResult = $("<div>");
                 naResult.attr("id", boozeFree.drinks[i].idDrink);
-                naResult.addClass("nonAlcoholicResult");
+                // added "col m4" to organize the list horizontally as well
+                naResult.addClass("nonAlcoholicResult col m4");
 
                 var naThumb = $("<img>");
                 naThumb.attr("src", boozeFree.drinks[i].strDrinkThumb);
@@ -89,7 +90,12 @@ $(document).ready(function () {
 
     $(document).on("click", ".nonAlcoholicResult", function(){
         getCocktail(parseInt(this.id));
-      });
+
+        // Trying to add button to restore list...
+        // var button = $("button");
+        // button.text("Get back to Non-Alcoholic drinks");
+        // $("#cocktail").append(button);
+    });
 
 
     //  var userInput = "rando";
