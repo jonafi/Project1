@@ -10,10 +10,12 @@ function getRecipe() {
         console.log("it works");
         console.log(response);
         var foodIngredients = [];
+        var foodMeasures = [];
         var mealName = response.meals[0].strMeal;
         var foodPicURL = response.meals[0].strMealThumb;
         var foodInstructions = response.meals[0].strInstructions;
         var foodTime = response.meals[0].strCategory;
+        
 
 
 
@@ -22,6 +24,12 @@ function getRecipe() {
         for (i = 1; i < 20; i++) {
             if (response.meals[0]["strIngredient" + i] !== null) {
                 foodIngredients.push(response.meals[0]["strIngredient" + i]);
+            }
+        }
+
+        for (i = 1; i < 15; i++) {
+            if (response.meals[0]["strMeasure" + i] !==null) {
+                foodMeasures.push(response.meals[0]["strMeasure" + i]);
             }
         }
 
@@ -41,6 +49,15 @@ function getRecipe() {
             recipeIngredientsItem.text(foodIngredients[i]);
             recipeIngredients.append(recipeIngredientsItem);
         }
+
+        var recipeMeasures = $("<ul>");
+        for (i = 0; i < foodMeasures.length; i++) {
+            recipeMeasuresItem = $("<li>")
+            recipeMeasuresItem.text(foodMeasures[i]);
+            recipeMeasures.append(recipeMeasuresItem);
+        }
+
+        console.log(recipeMeasures);
         
         var recipeGuide = $("<div>");
         recipeGuide.text(foodInstructions);
