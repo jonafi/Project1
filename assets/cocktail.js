@@ -60,8 +60,9 @@ $(document).ready(function () {
             var reRoll = $("<button>");
             reRoll.text("I want something different");
             reRoll.addClass("btn-large waves-effect waves-light");
+            reRoll.attr("id", "reRoll");
             cocktailDisplay.append(reRoll);
-            $("#random").append(cocktailDisplay)
+            $("#random").append(cocktailDisplay);
             
         }
 
@@ -107,6 +108,11 @@ $(document).ready(function () {
         // var button = $("button");
         // button.text("Get back to Non-Alcoholic drinks");
         // $("#cocktail").append(button);
+    });
+
+    $(document).on("click", "#reRoll", function(){
+        $("#random").empty();
+        getCocktail("rando");
     });
 
 
