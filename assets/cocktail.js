@@ -54,7 +54,16 @@ $(document).ready(function () {
             cocktailDisplay.append(cocktailImage);
             cocktailDisplay.append(cocktailIngredients);
             cocktailDisplay.append(cocktailDirections);
-            $("#cocktail").append(cocktailDisplay);
+            //$("#cocktail").append(cocktailDisplay);
+            if(userInput==="rando"){
+            
+            var reRoll = $("<button>");
+            reRoll.text("I want something different");
+            reRoll.addClass("btn-large waves-effect waves-light");
+            cocktailDisplay.append(reRoll);
+            $("#random").append(cocktailDisplay)
+            
+        }
 
         });
     };
@@ -98,12 +107,12 @@ $(document).ready(function () {
     });
 
 
-    //  var userInput = "rando";
-    //  getCocktail(userInput);
+      var userInput = "rando";
+      getCocktail(userInput);
 
     // var userInput = "piña colada";
     // getCocktail(userInput);
 
 
-    noAlcohol();
+    //noAlcohol();
  });
