@@ -1,11 +1,15 @@
 body {
-    background-image: url("https://images.unsplash.com/photo-1533628635777-112b2239b1c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)");
+    background-image: url("https://images.unsplash.com/photo-1533628635777-112b2239b1c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
    
 }
 
 header {
     font-family: 'Shadows Into Light', cursive;
     font-family: 'Indie Flower', cursive;
+}
+
+.divider {
+    background-color: black;
 }
 
 p {
@@ -19,4 +23,8 @@ h4 {
 
 .input {
     height: 50px;
+}
+
+.row {
+    margin-top: 40px;
 }
