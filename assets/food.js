@@ -1,19 +1,18 @@
-
-
 function getRecipe() {
 
-    var apiKey = "a7069c43e13c417486872a222fdec9b1";
-    var queryURL = "https://api.spoonacular.com/recipes/search?query=cheese&number=5&apiKey=" + apiKey;
+
+    var queryURL = "https://www.themealdb.com/api/json/v1/1/random.php";
       $.ajax({
-  
+    
           url: queryURL,
           method: "GET"
       }).then(function (response) {
           console.log("it works");
           console.log(response);
-  
+          console.log(response.meals[0].strMeal);
+    
       })
     
-}
-
-getRecipe();
+    }
+    
+    getRecipe();
