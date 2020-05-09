@@ -70,9 +70,12 @@ $(document).ready(function () {
                 var naResult = $("<div>");
                 naResult.attr("id", boozeFree.drinks[i].idDrink);
                 // added "col m4" to organize the list horizontally as well
-                naResult.addClass("nonAlcoholicResult col m4");
+                // added "valign-wrapper" to vertically center text
+                naResult.addClass("nonAlcoholicResult col m4 valign-wrapper");
 
-                var naThumb = $("<img>");
+
+                // added float left to img tag
+                var naThumb = $("<img class='left'>");
                 naThumb.attr("src", boozeFree.drinks[i].strDrinkThumb);
                 naThumb.attr("height", "70px;");
 
