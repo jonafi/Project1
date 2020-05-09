@@ -91,11 +91,13 @@ $(document).ready(function () {
         getCocktail(parseInt(this.id));
       });
 
+
     //  var userInput = "rando";
     //  getCocktail(userInput);
 
     // var userInput = "piña colada";
     // getCocktail(userInput);
+
 
     noAlcohol();
  });
