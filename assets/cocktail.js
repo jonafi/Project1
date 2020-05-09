@@ -2,7 +2,7 @@ $(document).ready(function () {
     function getCocktail(userInput) {
         $("#cocktail").empty();
         if(typeof userInput === "number"){
-            var APIcall = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=12560"
+            var APIcall = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + userInput;
         }
         else if(userInput === "rando") {
             var APIcall = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
