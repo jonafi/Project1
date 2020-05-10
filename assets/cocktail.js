@@ -66,6 +66,10 @@ $(document).ready(function () {
             
         }
 
+        else{
+              $("#search").append(cocktailDisplay);
+        }
+
         });
     };
 
@@ -95,15 +99,17 @@ $(document).ready(function () {
                 naResult.append(naThumb);
                 naResult.append(naName);                
 
-                $("#cocktail").append(naResult);
+                $("#nonAlcoholic").append(naResult);
                 i++;
             }
         });
     }
 
     $(document).on("click", ".nonAlcoholicResult", function(){
+        
+        //need new functionality to display NA drinks other than getCocktail.
         getCocktail(parseInt(this.id));
-
+        //
         // Trying to add button to restore list...
         // var button = $("button");
         // button.text("Get back to Non-Alcoholic drinks");
@@ -115,13 +121,21 @@ $(document).ready(function () {
         getCocktail("rando");
     });
 
+//Read the appropriate page in the address bar and load up the right function
+    
+     if(window.location.pathname==="randomcocktail.html"){
+       getCocktail("rando");
+    }
 
-      var userInput = "rando";
-      getCocktail(userInput);
+    else if(window.location.pathname==="nonalcoholic.html"){
+        noAlcohol();
+    }
+    else{
+        var userInput = "pina colada";
+        //replace with search box here
+        getCocktail(userInput);
+      }
 
-    // var userInput = "piña colada";
-    // getCocktail(userInput);
 
 
-    //noAlcohol();
  });
