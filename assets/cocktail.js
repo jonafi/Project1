@@ -136,6 +136,6 @@ $(document).ready(function () {
         getCocktail(userInput);
       }
 
-
+console.code(window.location.pathname);
 
  });
