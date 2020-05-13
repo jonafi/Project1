@@ -110,7 +110,7 @@ function getSearchRecipe() {
         method: "GET"
     }).then(function (response) {
         console.log(response);
-        $("#dinner-btn").on('click', function(){
+        $("#search-recipe-btn").on('click', function(){
             console.log("dinner btn works!");
         });
     })
@@ -126,7 +126,7 @@ function getDessert() {
         method: "GET"
     }).then(function (response) {
         console.log(response);
-        $("#lunch-btn").on('click', function(){
+        $("#dessert-btn").on('click', function(){
             console.log("lunch btn works!");
         });
 
