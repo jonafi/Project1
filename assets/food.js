@@ -57,7 +57,7 @@ function getRecipe() {
             recipeMeasures.append(recipeMeasuresItem);
         }
 
-        console.log(recipeMeasures);
+        console.log("here are the recipe measures: " + response.meals.length);
         
         var recipeGuide = $("<div>");
         recipeGuide.text(foodInstructions);
@@ -68,9 +68,25 @@ function getRecipe() {
         mealDisplay.append(recipeGuide);
 
         
+        $("#breakfast-btn").on('click', function(){
+            console.log("breakfast btn works!");
+            console.log(response.meals[0].strCategory);
+            // when user clicks on btn, they will be taken to a page w/ a breakfast food recipe
+            
+        });
 
+
+        $("#lunch-btn").on('click', function(){
+            console.log("lunch btn works!");
+        });
+
+        $("#dinner-btn").on('click', function(){
+            console.log("dinner btn works!");
+        });
     })
 
 }
 
 getRecipe();
+
+
