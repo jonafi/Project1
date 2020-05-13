@@ -85,6 +85,7 @@ $(document).ready(function () {
         }).then(function (boozeFree) {
                i=0;
                while(boozeFree.drinks[i] !== undefined){
+                // colDiv <- naResult (card) <- cardImg (card-image) <- naThumb && naName
 
                 // column div
                 var colDiv = $("<div class='col m4'>");
@@ -92,25 +93,21 @@ $(document).ready(function () {
                 // console.log(boozeFree.drinks[i].idDrink);
                 var naResult = $("<div>");
                 naResult.attr("id", boozeFree.drinks[i].idDrink);
-                // added "col m4" to organize the list horizontally as well
-                // added "valign-wrapper" to vertically center text
+                // this will be a card div
                 naResult.addClass("nonAlcoholicResult card hoverable");
 
                 // cardImg div
                 var cardImg = $("<div class='card-image'>")
                 var naThumb = $("<img class='cardImg z-depth-5'>");
                 naThumb.attr("src", boozeFree.drinks[i].strDrinkThumb);
-                // naThumb.attr("height", "70px;");
                 cardImg.append(naThumb);
 
-                //
-                //var cardText = $("<div class='card-content'>")
+                // added text to the img and append it
                 var naName = $("<span class='card-title' width= '100%'>");
                 naName.text(boozeFree.drinks[i].strDrink);
                 cardImg.append(naName);
 
-                naResult.append(cardImg);
-                //naResult.append(cardText);  
+                naResult.append(cardImg); 
                 // append everything to the column div
                 colDiv.append(naResult);              
 
@@ -148,7 +145,7 @@ $(document).ready(function () {
 
     });
 
-    noAlcohol();
+
 
 
 

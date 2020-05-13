@@ -41,6 +41,11 @@ h3 {
     float: none;
 }
 
+.card-title {
+    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Indie Flower', cursive;
+}
+
 .cardImg {
     filter: brightness(70%);
     width: 100%
@@ -48,3 +53,8 @@ h3 {
     object-fit: cover;
 }
 
+/* Added margins to the search-bar  */
+#searchDrinks {
+    margin: 30px;
+    background: transparent;
+}
