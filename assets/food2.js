@@ -8,7 +8,7 @@ function getRandomRecipe() {
         console.log(response);
         var mealName = response.meals[0].strMeal;  //name of meal
         var mealImage = response.meals[0].strMealThumb; //URL of meal image
-        var mealRecipe =response.meals[0].strSource;  //URL of full recipe details "open in new window?"
+        var mealRecipe = response.meals[0].strSource;  //URL of full recipe details "open in new window?"
         var mealVideo = response.meals[0].strYoutube; //video of recipe 
 
         console.log(mealName);
@@ -28,32 +28,32 @@ function getRandomRecipe() {
         // $("#randomRecipe").append(mealVideo);
 
         var repeatBtn = $("<button>").text("I Would Like Something Different!")
-        repeatBtn.on('click', function(){
+        repeatBtn.on('click', function () {
             $("#randomRecipe").empty();
             $("#randomRecipe").empty();
             getRandomRecipe();
         })
         $(mealN).append(repeatBtn);
     })
-        
+
 
 }
 
 
 function getSearchRecipe(e) {
-    
+
     // var userInput = prompt("replace this with a search box.  What recipe search term?")
     // //var userInput = jquery and christian make input box and form
     var userInput = $("#search").val();
-    var queryURL = "https://www.themealdb.com/api/json/v1/1/search.php?s="+userInput;
+    var queryURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        
+
         var mealName = response.meals[0].strMeal;  //name of meal
         var mealImage = response.meals[0].strMealThumb; //URL of meal image
-        var mealRecipe =response.meals[0].strSource;  //URL of full recipe details "open in new window?"
+        var mealRecipe = response.meals[0].strSource;  //URL of full recipe details "open in new window?"
         var mealVideo = response.meals[0].strYoutube; //video of recipe 
         // var inputField = $("")
 
@@ -62,30 +62,30 @@ function getSearchRecipe(e) {
         console.log(mealRecipe);
         console.log(mealVideo);
         $("#display-item").empty();
-         // $("#randomRecipe").append(mealName);
-         var atag = $("<a>").attr('href', mealRecipe);
-         var mealN = $("<div>").append(atag.text(mealName));
-         $("#display-item").append(mealN);
-         var imgtag = $("<a>").attr('href', mealVideo);
-         var mealImg = $("<img>").attr('src', mealImage);
-         imgtag.append(mealImg);
-         $("#display-item").append(imgtag);
+        // $("#randomRecipe").append(mealName);
+        var atag = $("<a>").attr('href', mealRecipe);
+        var mealN = $("<div>").append(atag.text(mealName));
+        $("#display-item").append(mealN);
+        var imgtag = $("<a>").attr('href', mealVideo);
+        var mealImg = $("<img>").attr('src', mealImage);
+        imgtag.append(mealImg);
+        $("#display-item").append(imgtag);
 
-         $("#submit").on('click', getSearchRecipe);
-         // $("#randomRecipe").append(mealRecipe);
-         // $("#randomRecipe").append(mealVideo);
- 
-    //      var repeatBtn = $("<button>").text("I Would Like Something Different!")
-    //      repeatBtn.on('click', function(){
-    //          $("#randomRecipe").empty();
-    //          $("#randomRecipe").empty();
-    //          getRandomRecipe();
-    //      })
-    //      $(mealN).append(repeatBtn);
-    //  })
+        $("#submit").on('click', getSearchRecipe);
+        // $("#randomRecipe").append(mealRecipe);
+        // $("#randomRecipe").append(mealVideo);
+
+        //      var repeatBtn = $("<button>").text("I Would Like Something Different!")
+        //      repeatBtn.on('click', function(){
+        //          $("#randomRecipe").empty();
+        //          $("#randomRecipe").empty();
+        //          getRandomRecipe();
+        //      })
+        //      $(mealN).append(repeatBtn);
+        //  })
 
     })
-       
+
 
 }
 
@@ -96,19 +96,48 @@ function getDessert() {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        i=0;
-        console.log(response);
-        while(response.meals[i] !== undefined){
 
-         console.log(response.meals[i].idMeal);
-         console.log(response.meals[i].strDrinkThumb);
-         console.log(response.meals[i].strMeal);
-         i++;
-     }
- });
-        
+        i = 0;
+        console.log(response);
+        while (response.meals[i] !== undefined) {
+
+            var mealName = response.meals[i].strMeal;  //name of meal
+            var myQueryUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + mealName;
+            $.ajax({
+
+                url: myQueryUrl,
+                method: "GET"
+            }).then(function (response) {
+                var mealName = response.meals[0].strMeal;
+                var mealImage = response.meals[0].strMealThumb; //URL of meal image
+                var mealRecipe = response.meals[0].strSource;  //URL of full recipe details "open in new window?"
+                var mealVideo = response.meals[0].strYoutube; //video of recipe
+
+
+                console.log(response.meals[0].idMeal);
+                console.log(response.meals[0].strDrinkThumb);
+                console.log(response.meals[0].strMeal);
+
+
+
+                // $("#randomRecipe").append(mealName);
+                var atag = $("<a>").attr('href', mealRecipe);
+                var mealN = $("<div>").append(atag.text(mealName));
+                $("#desserts").append(mealN);
+                var imgtag = $("<a>").attr('href', mealVideo);
+                var mealImg = $("<img>").attr('src', mealImage);
+                imgtag.append(mealImg);
+                $("#desserts").append(imgtag);
+            })
+
+            i++;
+        }
+
+
+    });
+
 
 }
- 
+
 
 
