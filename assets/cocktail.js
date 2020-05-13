@@ -85,26 +85,36 @@ $(document).ready(function () {
         }).then(function (boozeFree) {
                i=0;
                while(boozeFree.drinks[i] !== undefined){
+
+                // column div
+                var colDiv = $("<div class='col m4'>");
+
                 // console.log(boozeFree.drinks[i].idDrink);
                 var naResult = $("<div>");
                 naResult.attr("id", boozeFree.drinks[i].idDrink);
                 // added "col m4" to organize the list horizontally as well
                 // added "valign-wrapper" to vertically center text
-                naResult.addClass("nonAlcoholicResult col m4 valign-wrapper");
+                naResult.addClass("nonAlcoholicResult card hoverable");
 
-
-                // added float left to img tag
-                var naThumb = $("<img class='left'>");
+                // cardImg div
+                var cardImg = $("<div class='card-image'>")
+                var naThumb = $("<img class='cardImg z-depth-5'>");
                 naThumb.attr("src", boozeFree.drinks[i].strDrinkThumb);
-                naThumb.attr("height", "70px;");
+                // naThumb.attr("height", "70px;");
+                cardImg.append(naThumb);
 
-                var naName = $("<span>");
+                //
+                //var cardText = $("<div class='card-content'>")
+                var naName = $("<span class='card-title' width= '100%'>");
                 naName.text(boozeFree.drinks[i].strDrink);
+                cardImg.append(naName);
 
-                naResult.append(naThumb);
-                naResult.append(naName);                
+                naResult.append(cardImg);
+                //naResult.append(cardText);  
+                // append everything to the column div
+                colDiv.append(naResult);              
 
-                $("#nonAlcoholic").append(naResult);
+                $("#nonAlcoholic").append(colDiv);
                 i++;
             }
         });
@@ -137,6 +147,8 @@ $(document).ready(function () {
         getCocktail(searchTerm);
 
     });
+
+    noAlcohol();
 
 
 
