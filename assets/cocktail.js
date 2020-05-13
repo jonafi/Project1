@@ -110,6 +110,8 @@ $(document).ready(function () {
         });
     }
 
+  
+
     $(document).on("click", ".nonAlcoholicResult", function(){
         
         //need new functionality to display NA drinks other than getCocktail.
@@ -154,4 +156,5 @@ $(document).ready(function () {
 
 
  });
+
 
