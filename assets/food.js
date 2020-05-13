@@ -7,8 +7,7 @@ function getRecipe() {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log("it works");
-        console.log(response);
+        
         var foodIngredients = [];
         var foodMeasures = [];
         var mealName = response.meals[0].strMeal;
@@ -17,6 +16,11 @@ function getRecipe() {
         var foodTime = response.meals[0].strCategory;
         
 
+        if (foodTime !== "Breakfast") {
+            return console.log("end function");
+        } else {
+            console.log("it works");
+            console.log(response);
 
 
 
@@ -72,7 +76,7 @@ function getRecipe() {
             console.log("breakfast btn works!");
             console.log(response.meals[0].strCategory);
             // when user clicks on btn, they will be taken to a page w/ a breakfast food recipe
-            
+
         });
 
 
@@ -83,10 +87,54 @@ function getRecipe() {
         $("#dinner-btn").on('click', function(){
             console.log("dinner btn works!");
         });
-    })
+    }})
 
 }
 
+
+function getRandomRecipe() {
+    var queryURL = "https://www.themealdb.com/api/json/v1/1/random.php";
+    $.ajax({
+
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+    })
+        
+
+}
+
+
+function getSearchRecipe() {
+    var queryURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+    $.ajax({
+
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+    })
+        
+
+}
+
+function getDessert() {
+    var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert";
+    $.ajax({
+
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+    })
+        
+
+}
+
+
+
 getRecipe();
-
-
+getSearchRecipe();
+getRandomRecipe();
+getDessert();
