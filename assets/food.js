@@ -75,7 +75,7 @@ function getRecipe() {
         $("#breakfast-btn").on('click', function(){
             console.log("breakfast btn works!");
             console.log(response.meals[0].strCategory);
-            // when user clicks on btn, they will be taken to a page w/ a breakfast food recipe
+           
 
         });
 
