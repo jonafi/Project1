@@ -74,11 +74,11 @@ function getRecipe() {
 
 
         $("#lunch-btn").on('click', function(){
-            console.log("breakfast btn works!");
+            console.log("lunch btn works!");
         });
 
         $("#dinner-btn").on('click', function(){
-            console.log("breakfast btn works!");
+            console.log("dinner btn works!");
         });
     })
 
