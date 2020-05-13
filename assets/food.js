@@ -69,16 +69,16 @@ function getRecipe() {
 
         
         $("#breakfast-btn").on('click', function(){
-
+            console.log("breakfast btn works!");
         });
 
 
         $("#lunch-btn").on('click', function(){
-
+            console.log("breakfast btn works!");
         });
 
         $("#dinner-btn").on('click', function(){
-
+            console.log("breakfast btn works!");
         });
     })
 
