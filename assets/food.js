@@ -19,8 +19,8 @@ function getRecipe() {
         if (foodTime !== "Breakfast") {
             return console.log("end function");
         } else {
-            console.log("it works");
-            console.log(response);
+            
+            
 
 
 
