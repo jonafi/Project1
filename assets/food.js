@@ -72,21 +72,11 @@ function getRecipe() {
         mealDisplay.append(recipeGuide);
 
         
-        $("#breakfast-btn").on('click', function(){
-            console.log("breakfast btn works!");
-            console.log(response.meals[0].strCategory);
-           
-
-        });
 
 
-        $("#lunch-btn").on('click', function(){
-            console.log("lunch btn works!");
-        });
 
-        $("#dinner-btn").on('click', function(){
-            console.log("dinner btn works!");
-        });
+
+
     }})
 
 }
@@ -100,6 +90,12 @@ function getRandomRecipe() {
         method: "GET"
     }).then(function (response) {
         console.log(response);
+        $("#breakfast-btn").on('click', function(){
+            console.log("breakfast btn works!");
+            console.log(response.meals[0].strCategory);
+           
+
+        });
     })
         
 
@@ -114,6 +110,9 @@ function getSearchRecipe() {
         method: "GET"
     }).then(function (response) {
         console.log(response);
+        $("#dinner-btn").on('click', function(){
+            console.log("dinner btn works!");
+        });
     })
         
 
@@ -127,6 +126,10 @@ function getDessert() {
         method: "GET"
     }).then(function (response) {
         console.log(response);
+        $("#lunch-btn").on('click', function(){
+            console.log("lunch btn works!");
+        });
+
     })
         
 
