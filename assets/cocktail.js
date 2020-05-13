@@ -121,6 +121,17 @@ $(document).ready(function () {
         getCocktail("rando");
     });
 
+    $("form").submit(function( event ) {
+        event.preventDefault();
+        var searchTerm=$("#searchDrinks").val();
+        console.log(searchTerm)
+        $("#search").empty();
+        getCocktail(searchTerm);
+
+    });
+
+
+
 //Read the appropriate page in the address bar and load up the right function
     
      if(window.location.pathname==="/Project1/results/randomcocktail.html"){
