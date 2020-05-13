@@ -66,6 +66,11 @@ $(document).ready(function () {
             
         }
 
+        else if(typeof userInput===("number")){
+            $("#nonAlcoholic").empty();
+            $("#nonAlcoholic").append(cocktailDisplay);
+        }
+
         else{
               $("#search").append(cocktailDisplay);
         }
@@ -108,6 +113,7 @@ $(document).ready(function () {
     $(document).on("click", ".nonAlcoholicResult", function(){
         
         //need new functionality to display NA drinks other than getCocktail.
+
         getCocktail(parseInt(this.id));
         //
         // Trying to add button to restore list...
@@ -142,11 +148,9 @@ $(document).ready(function () {
         noAlcohol();
     }
     else{
-        var userInput = "pina colada";
-        //replace with search box here
         getCocktail(userInput);
       }
 
-console.log(window.location.pathname);
+
 
  });
