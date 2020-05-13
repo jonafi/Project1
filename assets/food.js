@@ -70,6 +70,7 @@ function getRecipe() {
         
         $("#breakfast-btn").on('click', function(){
             console.log("breakfast btn works!");
+            console.log(response.meals[0].strCategory);
         });
 
 
