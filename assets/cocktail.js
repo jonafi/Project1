@@ -123,11 +123,11 @@ $(document).ready(function () {
 
 //Read the appropriate page in the address bar and load up the right function
     
-     if(window.location.pathname==="randomcocktail.html"){
+     if(window.location.pathname==="/Project1/results/randomcocktail.html"){
        getCocktail("rando");
     }
 
-    else if(window.location.pathname==="nonalcoholic.html"){
+    else if(window.location.pathname==="/Project1/results/nonalcoholic.html"){
         noAlcohol();
     }
     else{
@@ -136,6 +136,6 @@ $(document).ready(function () {
         getCocktail(userInput);
       }
 
-console.code(window.location.pathname);
+console.log(window.location.pathname);
 
  });
