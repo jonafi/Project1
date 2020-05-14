@@ -7,7 +7,9 @@ function getRandomRecipe() {
     }).then(function (response) {
         console.log(response);
         var mealName = response.meals[0].strMeal;  //name of meal
+       
         var mealImage = response.meals[0].strMealThumb; //URL of meal image
+        
         var mealRecipe = response.meals[0].strSource;  //URL of full recipe details "open in new window?"
         var mealVideo = response.meals[0].strYoutube; //video of recipe 
 
@@ -22,12 +24,15 @@ function getRandomRecipe() {
         $("#randomRecipe").append(mealN);
         var imgtag = $("<a>").attr('href', mealVideo);
         var mealImg = $("<img>").attr('src', mealImage);
+        mealImg.attr("style", "height:250px;")
         imgtag.append(mealImg);
         $("#randomRecipe").append(imgtag);
         // $("#randomRecipe").append(mealRecipe);
         // $("#randomRecipe").append(mealVideo);
 
-        var repeatBtn = $("<button>").text("I Would Like Something Different!")
+        var repeatBtn = $("<button>");
+        repeatBtn.text("I Would Like Something Different!");
+        repeatBtn.addClass("btn-large waves-effect waves-light");
         repeatBtn.on('click', function () {
             $("#randomRecipe").empty();
             $("#randomRecipe").empty();
