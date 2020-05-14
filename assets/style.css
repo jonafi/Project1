@@ -58,3 +58,8 @@ h3 {
     margin: 30px;
     background: transparent;
 }
+
+.footer {
+    padding-top: 20px;
+    text-align: center;
+}
