@@ -36,6 +36,14 @@ h3 {
     margin-top: 40px;
 }
 
+/* Class to stretch the buttons with the image on index.html */
+.stretch {
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+}
+
+/* Card image and text */
 .card {
     display: inline-block;
     float: none;
@@ -53,7 +61,7 @@ h3 {
     object-fit: cover;
 }
 
-/* Added margins to the search-bar  */
+/* Added margins to the search-bar */
 #searchDrinks {
     margin: 30px;
     background: transparent;
