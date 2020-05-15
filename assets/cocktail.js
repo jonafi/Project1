@@ -29,18 +29,27 @@ $(document).ready(function () {
 
             //Basic display shows name of drink, picture, and instructions
             //ingredients are displayed as list items
-            //div has a starter class of "Cocktail"
-            var cocktailDisplay = $("<div>");
+            //div has a starter class of "Cocktail", column div
+            var cocktailDisplay = $("<div class='col s12 m6 offset-m3'>");
             cocktailDisplay.addClass("Cocktail");
 
-            var cocktailName = $("<div>");
+            // card div
+            var cardDiv = $("<div class='card transparent'>");
+
+            // card-title
+            var cocktailName = $("<div class='card-title center-align'>");
             cocktailName.addClass("Title");
             cocktailName.text(drinkName);
 
+            // card-image
+            var cardImg = $("<div class='card-image'>");
             var cocktailImage = $("<img>");
             cocktailImage.attr("src", drinkImageURL);
-            cocktailImage.attr("style", "height:250px;")
+            // appending to card-image
+            cardImg.append(cocktailImage);
 
+
+            // for loop for the ingredients text
             var cocktailIngredients = $("<ul>");
             for (i = 0; i < drinkIngredients.length; i++) {
                 cocktailIngredientsItem = $("<li>");
@@ -48,19 +57,44 @@ $(document).ready(function () {
                 cocktailIngredients.append(cocktailIngredientsItem);
             }
 
-            var cocktailDirections = $("<div>");
-            cocktailDirections.text(drinkInstrructions);
+            // directions text
+            // var cocktailDirections = $("<div>");
+            // cocktailDirections.text(drinkInstrructions);
 
-            cocktailDisplay.append(cocktailName);
-            cocktailDisplay.append(cocktailImage);
-            cocktailDisplay.append(cocktailIngredients);
-            cocktailDisplay.append(cocktailDirections);
+            // card-content
+            var cardInfo = $("<div class='card-content'>");
+            
+            // info
+            var ingDiv = $("<div id='ingredients'>");
+            var dirDiv = $("<div id='directions'>");
+
+            // content
+            var ingName = $("<div class='card-title'>");
+            ingName.text("Ingredients");
+            ingDiv.append(ingName);
+            ingDiv.append(cocktailIngredients);
+
+            var dirName = $("<div class='card-title'>");
+            dirName.text("Directions");
+            dirDiv.append(dirName);
+            dirDiv.append(drinkInstrructions);
+
+            // append to cardInfo
+            cardInfo.append(ingDiv);
+            cardInfo.append(dirDiv);
+
+            // append everything to cardDiv
+            cardDiv.append(cocktailName);
+            cardDiv.append(cardImg);
+            cardDiv.append(cardInfo);
+            // lastly append to the column (cocktailDisplay)
+            cocktailDisplay.append(cardDiv);
             //$("#cocktail").append(cocktailDisplay);
             if(userInput==="rando"){
             
             var reRoll = $("<button>");
             reRoll.text("I want something different");
-            reRoll.addClass("btn-large waves-effect waves-light");
+            reRoll.addClass("btn-large waves-effect waves-light stretch truncate");
             reRoll.attr("id", "reRoll");
             cocktailDisplay.append(reRoll);
             $("#random").append(cocktailDisplay);
@@ -89,7 +123,7 @@ $(document).ready(function () {
                 // colDiv <- naResult (card) <- cardImg (card-image) <- naThumb && naName
 
                 // column div
-                var colDiv = $("<div class='col m4'>");
+                var colDiv = $("<div class='col s12 m4'>");
 
                 // console.log(boozeFree.drinks[i].idDrink);
                 var naResult = $("<div>");
@@ -161,9 +195,7 @@ $(document).ready(function () {
     }
     else{
         getCocktail(userInput);
-      }
-
-
+    }
 
  });
 
