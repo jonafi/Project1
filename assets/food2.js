@@ -30,6 +30,8 @@ function getRandomRecipe() {
         // $("#randomRecipe").append(mealRecipe);
         // $("#randomRecipe").append(mealVideo);
 
+        
+
         var repeatBtn = $("<button>");
         repeatBtn.text("I Would Like Something Different!");
         repeatBtn.addClass("btn-large waves-effect waves-light");
@@ -123,8 +125,7 @@ function getDessert() {
                 console.log(response.meals[0].strDrinkThumb);
                 console.log(response.meals[0].strMeal);
 
-
-
+                              
                 // $("#randomRecipe").append(mealName);
 
                 // column div for everything about the dessert
@@ -137,7 +138,12 @@ function getDessert() {
                 // div for the card image
                 var cardImg = $("<div class='card-image'>");
                 var imgtag = $("<a>").attr('href', mealVideo);
+<<<<<<< HEAD
                 var mealImg = $("<img class='cardImg z-depth-5'>").attr('src', mealImage);
+=======
+                var mealImg = $("<img>").attr('src', mealImage);
+                mealImg.attr("style", "height:350px;")
+>>>>>>> 77a79a238281763f2100634f90e73b7c377d21a2
                 imgtag.append(mealImg);
 
                 // card-action (for the recipe links), will simply be called "Recipe"
