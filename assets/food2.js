@@ -7,7 +7,9 @@ function getRandomRecipe() {
     }).then(function (response) {
         console.log(response);
         var mealName = response.meals[0].strMeal;  //name of meal
+       
         var mealImage = response.meals[0].strMealThumb; //URL of meal image
+        
         var mealRecipe = response.meals[0].strSource;  //URL of full recipe details "open in new window?"
         var mealVideo = response.meals[0].strYoutube; //video of recipe 
 
@@ -17,23 +19,43 @@ function getRandomRecipe() {
         console.log(mealVideo);
 
         // $("#randomRecipe").append(mealName);
+
+        // <a> tag for recipe
         var atag = $("<a>").attr('href', mealRecipe);
-        var mealN = $("<div>").append(atag.text(mealName));
-        $("#randomRecipe").append(mealN);
+        // card div
+        var mealN = $("<div class='card transparent'>");
+
+        // card title
+        var cardTitle = $("<div class='card-title'>");
+        cardTitle.append(atag.text(mealName));
+        
+        // anchor for img
         var imgtag = $("<a>").attr('href', mealVideo);
+        // image tag
         var mealImg = $("<img>").attr('src', mealImage);
+        mealImg.addClass("stretch");
+        // appending to card div (mealN)
         imgtag.append(mealImg);
-        $("#randomRecipe").append(imgtag);
+        mealN.append(cardTitle);
+        mealN.append(imgtag);
+
         // $("#randomRecipe").append(mealRecipe);
         // $("#randomRecipe").append(mealVideo);
 
-        var repeatBtn = $("<button>").text("I Would Like Something Different!")
+        // append div to page (DOM)
+        $("#randomRecipe").append(mealN);
+
+        
+
+        var repeatBtn = $("<button class='stretch truncate'>");
+        repeatBtn.text("I Would Like Something Different!");
+        repeatBtn.addClass("btn-large waves-effect waves-light");
         repeatBtn.on('click', function () {
             $("#randomRecipe").empty();
             $("#randomRecipe").empty();
             getRandomRecipe();
         })
-        $(mealN).append(repeatBtn);
+        $("#randomRecipe").append(repeatBtn);
     })
 
 
@@ -118,16 +140,47 @@ function getDessert() {
                 console.log(response.meals[0].strDrinkThumb);
                 console.log(response.meals[0].strMeal);
 
-
-
+                              
                 // $("#randomRecipe").append(mealName);
-                var atag = $("<a>").attr('href', mealRecipe);
-                var mealN = $("<div>").append(atag.text(mealName));
-                $("#desserts").append(mealN);
+
+                // column div for everything about the dessert
+                var mealN = $("<div class='col m4'>");
+                //$("#desserts").append(mealN);
+
+                // div for the whole card 
+                var cardDiv = $("<div class='card hoverable transparent'>");
+
+                // div for the card image
+                var cardImg = $("<div class='card-image'>");
                 var imgtag = $("<a>").attr('href', mealVideo);
-                var mealImg = $("<img>").attr('src', mealImage);
+                var mealImg = $("<img class='cardImg z-depth-5'>").attr('src', mealImage);
                 imgtag.append(mealImg);
-                $("#desserts").append(imgtag);
+
+                // card-action (for the recipe links), will simply be called "Recipe"
+                var cardAct = $("<div class='card-action'>");
+                var atag = $("<a class='black-text accent-3-text'>").attr('href', mealRecipe);
+                var iconRes = $("<i class='material-icons'>").text("restaurant");
+                
+                atag.append(iconRes);
+                atag.append("Recipe");
+                
+
+                // card title
+                var nameDes = $("<span class='card-title' width= '100%'>");
+                nameDes.text(mealName);
+                imgtag.append(nameDes); // appending to a <a> tag
+                // appending to cardImg
+                cardImg.append(imgtag);
+                // appending to cardAct
+                cardAct.append(atag);
+                // appending to card div
+                cardDiv.append(cardImg);
+                cardDiv.append(cardAct);
+                // appending to whole column
+                mealN.append(cardDiv);
+                // adding to the page (DOM)
+                $("#desserts").append(mealN);
+
             })
 
             i++;

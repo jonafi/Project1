@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Cocktail</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
@@ -14,8 +15,8 @@
     
     <!-- Title/Header -->
     <header>
-        <h1 class="center-align">Quarantine Eats and Drinks!</h1>
-        <h4 class="center-align">Click on your meal-time choice for recipe ideas to fulfill your hungry palatte!</h4>
+        <h1 class="center-align">Quarantine Drinks!</h1>
+        <h4 class="center-align #26a69a teal-text lighten-1">Have a specific beverage in mind, search for your drink of choice below!</h4>
     </header>
 
     <div class="divider"></div>
@@ -28,12 +29,13 @@
         <div class="row">
             <form>
                 <div class="input-field">
+                    <!-- added the search icon to the search bar -->
+                    <label for="search"><i class="material-icons left">search</i></label>
                     <input id="searchDrinks" type="search" required>
-                    <label for="search"><i class="material-icons"></i></label>
                 </div>
             </form>
             <!-- Box to search drinks -->
-            <div class="col" id="search">
+            <div class="row" id="search">
                 
                 
             </div>
@@ -50,12 +52,14 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../assets/cocktail.js"></script>
     <script src="../assets/food.js"></script>
-
-
-
     
+
+    <div class="footer #26a69a teal-text lighten-1">
+        <h6>&copy; Quarantine Eats and Drinks</h6>
+    </div>
+
 </body>
 </html>
