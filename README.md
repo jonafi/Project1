@@ -1,11 +1,11 @@
 # Quarantine Eats and Drinks!
 
-### Project 1 || Team Parius 
+### Project 1 || Team Parius (#4)
 
 ## Project Description
 As a person in quarantine, it doesn't mean that we can't have a good meal and a nice cocktail. Anyone can use this application to inspire and instruct any user on how to make a variety of dishes and drinks at home.
 
-* [Quarantine Eats](https://jonafi.github.io/quarantine-eats/index.html)
+* [Link: Quarantine Eats & Drinks](https://jonafi.github.io/quarantine-eats/index.html)
 
 ![image](./assets/mainpageImage.png)
 
