@@ -29,10 +29,12 @@ function getRandomRecipe() {
         var cardTitle = $("<div class='card-title'>");
         cardTitle.append(atag.text(mealName));
         
-        // image tag and anchor
+        // anchor for img
         var imgtag = $("<a>").attr('href', mealVideo);
+        // image tag
         var mealImg = $("<img>").attr('src', mealImage);
         mealImg.addClass("stretch");
+        // appending to card div (mealN)
         imgtag.append(mealImg);
         mealN.append(cardTitle);
         mealN.append(imgtag);
@@ -45,7 +47,7 @@ function getRandomRecipe() {
 
         
 
-        var repeatBtn = $("<button>");
+        var repeatBtn = $("<button class='stretch truncate'>");
         repeatBtn.text("I Would Like Something Different!");
         repeatBtn.addClass("btn-large waves-effect waves-light");
         repeatBtn.on('click', function () {
