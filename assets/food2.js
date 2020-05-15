@@ -30,6 +30,8 @@ function getRandomRecipe() {
         // $("#randomRecipe").append(mealRecipe);
         // $("#randomRecipe").append(mealVideo);
 
+        
+
         var repeatBtn = $("<button>");
         repeatBtn.text("I Would Like Something Different!");
         repeatBtn.addClass("btn-large waves-effect waves-light");
@@ -123,14 +125,14 @@ function getDessert() {
                 console.log(response.meals[0].strDrinkThumb);
                 console.log(response.meals[0].strMeal);
 
-
-
+                              
                 // $("#randomRecipe").append(mealName);
                 var atag = $("<a>").attr('href', mealRecipe);
                 var mealN = $("<div>").append(atag.text(mealName));
                 $("#desserts").append(mealN);
                 var imgtag = $("<a>").attr('href', mealVideo);
                 var mealImg = $("<img>").attr('src', mealImage);
+                mealImg.attr("style", "height:350px;")
                 imgtag.append(mealImg);
                 $("#desserts").append(imgtag);
             })
