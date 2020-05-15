@@ -1,6 +1,7 @@
 # Quarantine Eats and Drinks!
 
-### Project 1 || Team Parius (#4)
+### Project 1
+![Team Parius (#4)](https://www.youtube.com/watch?v=glZDSd2dJXk&list=RDglZDSd2dJXk&start_radio=1&t=16)
 
 ## Project Description
 As a person in quarantine, it doesn't mean that we can't have a good meal and a nice cocktail. Anyone can use this application to inspire and instruct any user on how to make a variety of dishes and drinks at home.
