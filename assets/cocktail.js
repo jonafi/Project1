@@ -34,6 +34,7 @@ $(document).ready(function () {
             cocktailDisplay.addClass("Cocktail");
 
             var cocktailName = $("<div>");
+            cocktailName.addClass("Title");
             cocktailName.text(drinkName);
 
             var cocktailImage = $("<img>");
