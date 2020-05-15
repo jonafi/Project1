@@ -54,10 +54,20 @@ h3 {
     font-family: 'Indie Flower', cursive;
 }
 
+.card-action {
+    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Indie Flower', cursive;
+}
+
+.material-icons {
+    /* made the font size small and aligned it to the middle */
+    font-size: 1rem;
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
 .cardImg {
     filter: brightness(70%);
-    width: 100%
-    height: 70px;
     object-fit: cover;
 }
 
