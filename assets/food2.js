@@ -19,16 +19,29 @@ function getRandomRecipe() {
         console.log(mealVideo);
 
         // $("#randomRecipe").append(mealName);
+
+        // <a> tag for recipe
         var atag = $("<a>").attr('href', mealRecipe);
-        var mealN = $("<div>").append(atag.text(mealName));
-        $("#randomRecipe").append(mealN);
+        // card div
+        var mealN = $("<div class='card transparent'>");
+
+        // card title
+        var cardTitle = $("<div class='card-title'>");
+        cardTitle.append(atag.text(mealName));
+        
+        // image tag and anchor
         var imgtag = $("<a>").attr('href', mealVideo);
         var mealImg = $("<img>").attr('src', mealImage);
-        mealImg.attr("style", "height:250px;")
+        mealImg.addClass("stretch");
         imgtag.append(mealImg);
-        $("#randomRecipe").append(imgtag);
+        mealN.append(cardTitle);
+        mealN.append(imgtag);
+
         // $("#randomRecipe").append(mealRecipe);
         // $("#randomRecipe").append(mealVideo);
+
+        // append div to page (DOM)
+        $("#randomRecipe").append(mealN);
 
         
 
@@ -40,7 +53,7 @@ function getRandomRecipe() {
             $("#randomRecipe").empty();
             getRandomRecipe();
         })
-        $(mealN).append(repeatBtn);
+        $("#randomRecipe").append(repeatBtn);
     })
 
 
