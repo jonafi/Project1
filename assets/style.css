@@ -59,7 +59,7 @@ h3 {
     font-family: 'Indie Flower', cursive;
 }
 
-.material-icons {
+a .material-icons {
     /* made the font size small and aligned it to the middle */
     font-size: 1rem;
     padding-right: 5px;
