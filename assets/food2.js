@@ -138,12 +138,7 @@ function getDessert() {
                 // div for the card image
                 var cardImg = $("<div class='card-image'>");
                 var imgtag = $("<a>").attr('href', mealVideo);
-<<<<<<< HEAD
                 var mealImg = $("<img class='cardImg z-depth-5'>").attr('src', mealImage);
-=======
-                var mealImg = $("<img>").attr('src', mealImage);
-                mealImg.attr("style", "height:350px;")
->>>>>>> 77a79a238281763f2100634f90e73b7c377d21a2
                 imgtag.append(mealImg);
 
                 // card-action (for the recipe links), will simply be called "Recipe"
