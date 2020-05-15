@@ -19,20 +19,35 @@ function getRandomRecipe() {
         console.log(mealVideo);
 
         // $("#randomRecipe").append(mealName);
+
+        // <a> tag for recipe
         var atag = $("<a>").attr('href', mealRecipe);
-        var mealN = $("<div>").append(atag.text(mealName));
-        $("#randomRecipe").append(mealN);
+        // card div
+        var mealN = $("<div class='card transparent'>");
+
+        // card title
+        var cardTitle = $("<div class='card-title'>");
+        cardTitle.append(atag.text(mealName));
+        
+        // anchor for img
         var imgtag = $("<a>").attr('href', mealVideo);
+        // image tag
         var mealImg = $("<img>").attr('src', mealImage);
-        mealImg.attr("style", "height:250px;")
+        mealImg.addClass("stretch");
+        // appending to card div (mealN)
         imgtag.append(mealImg);
-        $("#randomRecipe").append(imgtag);
+        mealN.append(cardTitle);
+        mealN.append(imgtag);
+
         // $("#randomRecipe").append(mealRecipe);
         // $("#randomRecipe").append(mealVideo);
 
+        // append div to page (DOM)
+        $("#randomRecipe").append(mealN);
+
         
 
-        var repeatBtn = $("<button>");
+        var repeatBtn = $("<button class='stretch truncate'>");
         repeatBtn.text("I Would Like Something Different!");
         repeatBtn.addClass("btn-large waves-effect waves-light");
         repeatBtn.on('click', function () {
@@ -40,7 +55,7 @@ function getRandomRecipe() {
             $("#randomRecipe").empty();
             getRandomRecipe();
         })
-        $(mealN).append(repeatBtn);
+        $("#randomRecipe").append(repeatBtn);
     })
 
 
